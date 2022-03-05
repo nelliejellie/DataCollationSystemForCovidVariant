@@ -8,6 +8,8 @@ namespace Core
 {
     public class AccumulatedData
     {
+        public static IDictionary<string, string> dataTable = new Dictionary<string, string>();
+
         public int ChancePredictor(Patient person, HealthAnalyzer checker)
         {
             int data1 = checker.CheckTemperaturePercentage(person.TempInCelsius);

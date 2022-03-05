@@ -10,7 +10,7 @@ namespace PatientTest
         Patient raf = new Patient()
         {
             Fullname = "Raphael Isaac",
-            Age = 24,
+            Age = 42,
             TempInCelsius = 41,
             HeartRate = 95,
             Cardiac = false,
