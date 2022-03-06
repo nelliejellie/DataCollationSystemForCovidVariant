@@ -44,11 +44,12 @@ namespace Core
                 HealthAnalyzer h = new HealthAnalyzer();
 
                 AccumulatedData robotDoctor = new AccumulatedData();
-                
-                string result = $"{robotDoctor.ChancePredictor(newPatient, h)}%";
+
+                int resultInInt = robotDoctor.ChancePredictor(newPatient, h);
+                string result = $"{resultInInt}%";
 
                 AccumulatedData.dataTable.Add(newPatient.ToString(), result);
-                dataGridView1.Rows.Add(newPatient, result);
+                dataGridView1.Rows.Add(newPatient, result, GroupData(resultInInt));
 
                 TextCleaner();
             }
@@ -71,5 +72,50 @@ namespace Core
             fever.Text = "";
             
         }
+
+        // grouping the data to get most severe
+        public string GroupData(int risk)
+        {
+            try
+            {
+                int convertString = risk;
+
+                if (convertString <= 15)
+                {
+                    return "Low Risk";
+                }
+                else if(convertString > 15 && convertString <= 30)
+                {
+                    return "Medium Risk";
+                }
+                else if(convertString > 30 && convertString <= 45)
+                {
+                    return "High risk";
+                }
+                else if(convertString > 45 && convertString  <= 60)
+                {
+                    return "Quarantine";
+                }
+                else if(convertString > 60 && convertString <= 75)
+                {
+                    return "Severe";
+                }
+                else if(convertString > 75 && convertString <= 90)
+                {
+                    return "Very Severe";
+                }
+                else if(convertString > 90)
+                {
+                    return "Critical";
+                }
+            }
+            catch(FormatException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            return "Cannot group Data";
+        }   
+
     }
 }

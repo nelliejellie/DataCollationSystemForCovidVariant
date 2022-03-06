@@ -48,6 +48,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Patients = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Risk = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.patientGroup = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -251,22 +252,30 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Patients,
-            this.Risk});
-            this.dataGridView1.Location = new System.Drawing.Point(470, 63);
+            this.Risk,
+            this.patientGroup});
+            this.dataGridView1.Location = new System.Drawing.Point(383, 63);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(306, 283);
+            this.dataGridView1.Size = new System.Drawing.Size(341, 283);
             this.dataGridView1.TabIndex = 19;
             // 
             // Patients
             // 
             this.Patients.HeaderText = "Patients";
             this.Patients.Name = "Patients";
-            this.Patients.Width = 200;
+            this.Patients.Width = 150;
             // 
             // Risk
             // 
             this.Risk.HeaderText = "Risk(%)";
             this.Risk.Name = "Risk";
+            this.Risk.Width = 50;
+            // 
+            // patientGroup
+            // 
+            this.patientGroup.HeaderText = "Group";
+            this.patientGroup.Name = "patientGroup";
+            this.patientGroup.ReadOnly = true;
             // 
             // Form2
             // 
@@ -323,5 +332,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Patients;
         private System.Windows.Forms.DataGridViewTextBoxColumn Risk;
+        private System.Windows.Forms.DataGridViewTextBoxColumn patientGroup;
     }
 }
