@@ -5,7 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace Core
@@ -48,7 +48,15 @@ namespace Core
                 int resultInInt = robotDoctor.ChancePredictor(newPatient, h);
                 string result = $"{resultInInt}%";
 
+                // simulate processing
                 AccumulatedData.dataTable.Add(newPatient.ToString(), result);
+                process.Visible = true;
+                process.Update();
+                Thread.Sleep(2000);
+                process.Visible = false;
+                process.Update();
+
+                // add data to table
                 dataGridView1.Rows.Add(newPatient, result, GroupData(resultInInt));
 
                 TextCleaner();

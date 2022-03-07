@@ -49,6 +49,7 @@
             this.Patients = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Risk = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.patientGroup = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.process = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -194,9 +195,9 @@
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button1.Location = new System.Drawing.Point(367, 363);
+            this.button1.Location = new System.Drawing.Point(332, 361);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(116, 32);
+            this.button1.Size = new System.Drawing.Size(95, 32);
             this.button1.TabIndex = 15;
             this.button1.Text = "Analyse Data";
             this.button1.UseVisualStyleBackColor = false;
@@ -254,7 +255,7 @@
             this.Patients,
             this.Risk,
             this.patientGroup});
-            this.dataGridView1.Location = new System.Drawing.Point(383, 63);
+            this.dataGridView1.Location = new System.Drawing.Point(447, 63);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(341, 283);
             this.dataGridView1.TabIndex = 19;
@@ -277,12 +278,24 @@
             this.patientGroup.Name = "patientGroup";
             this.patientGroup.ReadOnly = true;
             // 
+            // process
+            // 
+            this.process.AutoSize = true;
+            this.process.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.process.Location = new System.Drawing.Point(329, 185);
+            this.process.Name = "process";
+            this.process.Size = new System.Drawing.Size(98, 16);
+            this.process.TabIndex = 20;
+            this.process.Text = "Processing...";
+            this.process.Visible = false;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.process);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.temp);
             this.Controls.Add(this.age);
@@ -333,5 +346,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Patients;
         private System.Windows.Forms.DataGridViewTextBoxColumn Risk;
         private System.Windows.Forms.DataGridViewTextBoxColumn patientGroup;
+        private System.Windows.Forms.Label process;
     }
 }
